@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1504258175754" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+    <process id="test1" isClosed="false" isExecutable="true" processType="None">
+        <startEvent id="start" name="StartEvent"/>
+        <userTask activiti:exclusive="true" id="_3" name="第一个任务"/>
+        <exclusiveGateway id="exclusiveGateway_1" name="ExclusiveGateway"/>
+        <userTask activiti:exclusive="true" id="branch_1" name="分支1"/>
+        <userTask activiti:exclusive="true" id="branch_2" name="分支2"/>
+        <endEvent id="end" name="EndEvent"/>
+        <sequenceFlow id="_4" sourceRef="start" targetRef="_3"/>
+        <sequenceFlow id="_10" sourceRef="exclusiveGateway_1" targetRef="branch_1">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${type==1}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="_9" sourceRef="exclusiveGateway_1" targetRef="branch_2">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${type==2}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="_6" sourceRef="_3" targetRef="exclusiveGateway_1"/>
+        <sequenceFlow id="_7" sourceRef="branch_1" targetRef="end"/>
+        <sequenceFlow id="_8" sourceRef="branch_2" targetRef="end"/>
+    </process>
+</definitions>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1504258175754" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+    <process id="test2" isClosed="false" isExecutable="true" processType="None">
+        <startEvent id="start" name="StartEvent"/>
+        <userTask activiti:exclusive="true" id="firstTask" name="第一个任务"/>
+        <parallelGateway id="fork" name="parallelGateway fork"/>
+        <userTask activiti:exclusive="true" id="branch_1" name="分支1"/>
+        <userTask activiti:exclusive="true" id="branch_2" name="分支2"/>
+        <parallelGateway id="join" name="parallelGateway join"/>
+        <userTask activiti:exclusive="true" id="task2" name="合并任务"/>
+        <endEvent id="end" name="EndEvent"/>
+        <sequenceFlow id="_4" sourceRef="start" targetRef="firstTask"/>
+        <sequenceFlow id="_6" sourceRef="firstTask" targetRef="fork"/>
+        <sequenceFlow id="_9" sourceRef="fork" targetRef="branch_2">
+        </sequenceFlow>
+        <sequenceFlow id="_10" sourceRef="fork" targetRef="branch_1">
+        </sequenceFlow>
+        <sequenceFlow id="_7" sourceRef="branch_1" targetRef="join"/>
+        <sequenceFlow id="_8" sourceRef="branch_2" targetRef="join"/>
+        <sequenceFlow id="_11" sourceRef="join" targetRef="end"/>
+    </process>
+</definitions>
