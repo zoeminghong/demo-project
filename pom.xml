@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -19,6 +20,9 @@
         <module>spring-boot-activiti-demo</module>
         <module>spring-boot-h2-demo</module>
         <module>study-demo</module>
+        <module>dubbo-with-xml/dubbo-xml-provider</module>
+        <module>dubbo-with-xml/dubbo-xml-api</module>
+        <module>dubbo-with-xml/dubbo-xml-consumer</module>
     </modules>
 
     <properties>
