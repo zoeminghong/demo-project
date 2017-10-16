@@ -23,6 +23,7 @@
         <module>dubbo-with-xml/dubbo-xml-provider</module>
         <module>dubbo-with-xml/dubbo-xml-api</module>
         <module>dubbo-with-xml/dubbo-xml-consumer</module>
+        <module>mybatis-starter-demo</module>
     </modules>
 
     <properties>

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mybatis-demo
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:h2:mem:test
+      username: root
+      initial-size: 10
+      max-size: 50
+      password: 123456
+      driver-class-name: org.h2.Driver
+server:
+  port: 8081
