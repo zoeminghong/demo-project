@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: kafka-demo
+  kafka:
+    bootstrap-servers: 10.200.131.21:9092,10.200.131.22:9092,10.200.131.25:9092
+    consumer:
+      group-id: myGroup
+server:
+  port: 8083

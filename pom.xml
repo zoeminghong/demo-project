@@ -24,6 +24,8 @@
         <module>dubbo-with-xml/dubbo-xml-api</module>
         <module>dubbo-with-xml/dubbo-xml-consumer</module>
         <module>mybatis-starter-demo</module>
+        <module>kafka-demo</module>
+        <module>vert-demo</module>
     </modules>
 
     <properties>
